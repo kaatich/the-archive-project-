@@ -1,0 +1,71 @@
+.sous-form{
+    display: flex;
+    justify-content: center;
+}
+
+.addd-document2{
+    margin-top: 7cm;
+    margin-right: 2cm;
+}
+.form-container2{
+    display: flex;
+
+
+}
+.form-container2 input{
+    padding: 16px 84px;
+}
+.form-container2 label{
+    font-size: 25px;
+    font-weight: bold;
+    color: brown;
+    
+}
+.btn-add2{
+    padding: 0 50px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: brown;
+  border: none;
+  color: white;
+  font-family: "El Messiri", sans-serif;
+}
+.data-table2 {
+    border: 1px solid black;
+    margin-top: 50px;
+    width: 31.4cm; /* Set an explicit width for the table */
+    table-layout: fixed; /* Set the table layout to fixed */
+  }
+  
+  .data-table2 th, .data-table2 td {
+    
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Display an ellipsis (...) when content overflows */
+  }
+  
+  .data-table2 th {
+    background-color: #f2f2f2;
+  }
+  
+  .data-table2 tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .data-table2 td:hover {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: inherit;
+  }
+
+  .btn-mod2{
+    padding: 10px 30px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: brown;
+    font-family: "El Messiri", sans-serif;
+  }

@@ -1,0 +1,72 @@
+.document-form{
+    display: flex;
+    justify-content: center;
+}
+
+
+.addd-document3{
+    margin-top: 7cm;
+    margin-right: 2cm;
+}
+.form-container3{
+    display: flex;
+
+
+}
+.form-container3 input{
+    padding: 16px 84px;
+}
+.form-container3 label{
+    font-size: 25px;
+    font-weight: bold;
+    color: brown;
+    
+}
+.btn-add3{
+    padding: 0 50px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: brown;
+  border: none;
+  color: white;
+  font-family: "El Messiri", sans-serif;
+}
+.data-table3 {
+    border: 1px solid black;
+    margin-top: 50px;
+    width: 27.8cm; /* Set an explicit width for the table */
+    table-layout: fixed; /* Set the table layout to fixed */
+  }
+  
+  .data-table3 th, .data-table3 td {
+    
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Display an ellipsis (...) when content overflows */
+  }
+  
+  .data-table3 th {
+    background-color: #f2f2f2;
+  }
+  
+  .data-table3 tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .data-table3 td:hover {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: inherit;
+  }
+
+  .btn-mod3{
+    padding: 10px 30px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: brown;
+    font-family: "El Messiri", sans-serif;
+  }

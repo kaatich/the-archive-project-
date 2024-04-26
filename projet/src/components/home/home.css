@@ -1,0 +1,8 @@
+body{
+    font-family: "Poppins", sans-serif;
+    direction: rtl;
+    font-family: "Noto Sans Arabic", sans-serif;
+    background-image: url('https://www.ville-marrakech.ma/images/motif.png');
+    background-repeat: repeat;
+    background-size: 10%;
+  }

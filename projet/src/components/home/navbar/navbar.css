@@ -1,0 +1,284 @@
+.logo-home{
+    width: 50px;
+}
+.name-home{
+margin-top: 16px;
+font-weight: bold;
+margin-right: 5px;
+color: white;
+}
+
+.navbar{
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+
+.logo2{
+    display: flex;
+    margin-right: 24px;
+    align-items: center;
+    
+}
+
+.fa-regular{
+  font-size: 20px;
+  margin-right: 9px;
+  color: #a94b41;
+  font-weight: bold;
+}
+
+
+.login-btn{
+  margin-left: 10px;
+  padding: 10px 2px 7px 5px;
+  font-size: 20px;
+  font-family: "El Messiri", sans-serif;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: #a94b41b6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar{
+  background-color: #a94b41;
+  padding: 15px;
+}
+
+
+.left{
+  display: flex;
+  align-items: center;
+}
+
+.language-select{
+  margin-left: 50px;
+}
+
+.selected-language{
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.navbar {
+  /* Your existing styles */
+  position: relative; /* Position relative for containing the absolute dropdown */
+}
+
+.dropdown {
+  position: absolute;
+  top: 72%;
+  left: 237px;
+  z-index: 1;
+  background-color: #a94b41;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  border-bottom: #a94b41;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+.img-lang2{
+  margin-left: 3px;
+}
+
+.navbar-ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 20px 37px 20px 0px;
+  margin: 0;
+  box-shadow: 5px 3px 5px rgb(207, 207, 207);
+
+  
+}
+.navbar-ul li{
+  margin-left: 50px;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+.navbar-ul li:hover{
+
+  color: #b64d41  ;
+}
+
+
+
+.main-h{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin: 300px;
+  color: #ac473cb4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navbar-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;  
+}
+
+
+.navbar-list li {
+    padding: 5px 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+
+}
+
+.navbar-list li:hover {
+background-color: #9b5750b6;
+margin: 0;
+}
+
+.add-butt{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #a94b4134;
+    color: #a94b41b6;
+    padding: 15px 20px;
+    
+    cursor: pointer;
+    position: absolute;
+    left: 100%;
+    transform: translateX(-99%);
+    top: 50%;
+    
+} */
+
+.fa-solid {
+    font-size: 20px;
+    margin-right: 9px;
+    color: #ffffff;
+}
+/*
+.navbar-list .add-butt{
+    color: #a94b41b6;
+}
+.navbar-list .add-butt:hover{
+    background-color: rgba(255, 255, 255, 0.418);
+}
+
+
+.language-select {
+    position: relative;
+    margin-right: 20px; 
+  }
+  
+  .selected-language {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .selected-language img {
+    width: 20px;
+    margin-right: 5px; 
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 3px;
+    background-color: #a94b41c4;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+  .main-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+  }
+
+.img-lang{
+    margin-left: 5px;
+    width: 10px;
+}*/

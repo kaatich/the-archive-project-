@@ -1,0 +1,171 @@
+body{
+  font-family: "Poppins", sans-serif;
+  direction: rtl;
+  font-family: "El Messiri", sans-serif;
+  background-image: url('https://www.ville-marrakech.ma/images/motif.png');
+  background-repeat: repeat;
+  background-size: 10%;
+}
+.nav{
+}
+.nav2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav img{
+  width: 64px;
+}
+.hr {
+  border: none; /* Remove default border */
+  border-top: 2px solid #333; /* Add a custom border */
+  width: 50%; /* Set width */
+  margin: 0 auto; /* Center the hr horizontally */
+  margin-top: 20px; /* Adjust top margin as needed */
+  margin-bottom: 20px; /* Adjust bottom margin as needed */
+  font-weight: bold; /* Make the line more bold */
+}
+
+.logo-name{
+  font-family: "El Messiri", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+.nav p{
+  display: flex;
+  justify-content: center;
+}
+
+.login{
+  font-family: "El Messiri", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0px;
+  margin-bottom: 80px;
+  color:#a94b41;
+}
+.from{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.login-input-name{
+    width: 80%;
+    font-family: "El Messiri", sans-serif;
+    border: .1rem solid #7b7e80;
+    height: 1.5rem;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    line-height: .4rem;
+    color: #6173a2;
+    font-size:17px;
+}
+.login-input-pass{
+    width: 80%;
+    font-family: "El Messiri", sans-serif;
+    border: .1rem solid #7b7e80;
+    height: 1.5rem;
+    padding: 5px;
+    margin-top: 5px;
+    font-size:18px;
+}
+.login-input-email{
+  width: 80%;
+  font-family: "El Messiri", sans-serif;
+  border: .1rem solid #7b7e80;
+  height: 1.5rem;
+  padding: 5px;
+  margin-top: 5px;
+  font-size:18px;
+}
+.email-error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px; /* Adjust this value as needed */
+  margin-bottom: 10px;
+  margin-left: 38%;/* Align text to the right */
+}
+
+.login-input.error {
+  width: 80%;
+  border-color: red;
+  height: 1.5rem;
+  padding: 5px;
+  border :2px solid red;
+  border-radius: 5px;
+}
+.login-input-error{
+  
+}
+/* You can also add additional styling to make the error more noticeable, like changing the color of the placeholder text */
+.login-input.error::placeholder {
+  color: red;
+}
+.error-message-name {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px; /* Adjust this value as needed */
+  margin-bottom: 30px;
+  margin-left: 50%;
+}
+.error-message-pass {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px; /* Adjust this value as needed */
+  margin-bottom: 5px;
+  margin-left: 55%;
+}
+.forgot-password {
+  font-size: 0.8rem;
+  margin-top: 10px; /* Adjust the top margin as needed */
+  text-align: right; /* Align text to the right */
+  color: #333;
+  margin-right: 40%;
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
+  /* Color of the text */
+  cursor: pointer; /* Change cursor to pointer */
+  /* Color of the text */
+}
+.forgot-password:hover {
+  text-decoration: none; /* Underline text on hover */
+}
+.login-button {
+  background-color: #28a745; /* Green color for the button */
+  color: white; /* White text color */
+  border: none; /* No border */
+  padding: 5px 30px; /* Padding around the text */
+  font-size: 16px; /* Font size of the text */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  margin-left: 65%;
+  margin-top: 15%;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 500;
+}
+
+.login-button:hover {
+  background-color: #218838; /* Darker green color on hover */
+}
+
+.real-login-container {
+  max-width: 25%; /* Set maximum width */
+  min-width: 400px; /* Set minimum width */
+  margin: 0 auto; /* Center the container horizontally */
+  border: 1px solid white; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.5); /* Shadow effect with smaller spread radius */
+  padding: 25px 20px 40px 20px; /* Padding to contain the elements */
+  overflow: hidden; /* Hide overflow content */
+}
+.logo-1{
+  background-color:#a94b41;
+   /* Set the width of the element */
+  
+}

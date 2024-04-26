@@ -1,0 +1,11 @@
+/* Cursor.css */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #a94b4134; /* Customize the cursor color */
+    border-radius: 50%;
+    pointer-events: none; /* Ensure the cursor doesn't interfere with click events */
+    z-index: 9999; /* Ensure it's above other elements */
+  }
+  
