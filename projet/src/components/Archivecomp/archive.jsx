@@ -50,10 +50,53 @@ const ArchiveComponent = () => {
     const buttons = [];
     for (let i = 0; i < 5; i++) {
       buttons.push(
-        <button key={i} onClick={() => handleTablletClick(i + 1)}>Tabllet de Rangement {i + 1}</button>
+        <table key={i} border="3">
+          <thead>
+            <tr>
+              <th>Tabllet de Rangement {i + 1}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {generateBoxes()}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       );
     }
     return buttons;
+  };
+
+  const generateBoxes = () => {
+    const boxes = [];
+    for (let i = 0; i < 4; i++) {
+      boxes.push(
+        <div key={i}>
+          <h4>Boite {i + 1}</h4>
+          {generateFiles()}
+        </div>
+      );
+    }
+    // Add an additional box for the fifth "Tabllet de Rangement"
+    if (selectedTabllet === 5) {
+      boxes.push(
+        <div key={4}>
+          <h4>Boite 5</h4>
+          {generateFiles()}
+        </div>
+      );
+    }
+    return boxes;
+  };
+
+  const generateFiles = () => {
+    const files = [];
+    for (let i = 0; i < 5; i++) {
+      files.push(<div key={i}>File {i + 1}</div>);
+    }
+    return files;
   };
 
   const renderTables = () => {
