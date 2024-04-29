@@ -21,7 +21,6 @@ const Scan = () => {
         setSelectedIcon(iconClass);
         setIsActive(false);
     };
-
     const handleImageClick = () => {
         fileInputRef.current.click();
     };
@@ -74,33 +73,33 @@ const Scan = () => {
                             </label>
                         </div>
                         <div className={`select-menu ${isActive ? 'active' : ''}`}>
-                            <div className="select-btn" onClick={handleSelect}>
-                                <span className="sBtn-text">{selectedOption}</span>
-                                <i className={selectedIcon}></i>
-                            </div>
-                            <ul className="options">
-                                <li className="option" onClick={() => handleOptionClick("Github", "bx bxl-github")}>
-                                    <i className="bx bxl-github" style={{ color: '#171515' }}></i>
-                                    <span className="option-text">Github</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Instagram", "bx bxl-instagram-alt")}>
-                                    <i className="bx bxl-instagram-alt" style={{ color: '#E1306C' }}></i>
-                                    <span className="option-text">Instagram</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Linkedin", "bx bxl-linkedin-square")}>
-                                    <i className="bx bxl-linkedin-square" style={{ color: '#0E76A8' }}></i>
-                                    <span className="option-text">Linkedin</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Facebook", "bx bxl-facebook-circle")}>
-                                    <i className="bx bxl-facebook-circle" style={{ color: '#4267B2' }}></i>
-                                    <span className="option-text">Facebook</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Twitter", "bx bxl-twitter")}>
-                                    <i className="bx bxl-twitter" style={{ color: '#1DA1F2' }}></i>
-                                    <span className="option-text">Twitter</span>
-                                </li>
-                            </ul>
-                        </div>
+    <div className="select-btn" onClick={handleSelect}>
+        <span className="sBtn-text">{selectedOption}</span>
+        <i className={selectedIcon}></i>
+    </div>
+    <ul className="options">
+        <li className="option" onClick={() => handleOptionClick("Excel", "far fa-file-excel")}>
+            <i className="far fa-file-excel" style={{ color: '#1F9D55', verticalAlign: 'middle' }}></i>
+            <span className="option-text">Excel</span>
+        </li>
+        <li className="option" onClick={() => handleOptionClick("Word", "far fa-file-word")}>
+            <i className="far fa-file-word" style={{ color: '#2B579A', verticalAlign: 'middle' }}></i>
+            <span className="option-text">Word</span>
+        </li>
+        <li className="option" onClick={() => handleOptionClick("PDF", "far fa-file-pdf")}>
+            <i className="far fa-file-pdf" style={{ color: 'rgb(255, 23, 23)', verticalAlign: 'middle' }}></i>
+            <span className="option-text">PDF</span>
+        </li>
+        <li className="option" onClick={() => handleOptionClick("Image", "far fa-file-image")}>
+            <i className="far fa-file-image" style={{ color: '#663399', verticalAlign: 'middle' }}></i>
+            <span className="option-text">Image</span>
+        </li>
+    </ul>
+</div>
+
+
+
+
                     </div>
                     <div>
                         <table className="data-table">

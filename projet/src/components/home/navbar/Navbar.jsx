@@ -64,7 +64,7 @@ const Navbar = () => {
                     <Link to='/Documents'><li>إدخال الوثائق</li></Link>
                     <Link to='/FileTraitement'><li>معالجة الوتائق</li></Link>
                     <Link to='/scan'><li>تصوير و فهرسة الوثائق</li></Link>
-                    <li>تخزين الوثائق</li>
+                    <Link to='/Archive'><li>تخزين الوثائق</li></Link>
                     <li>البحت</li>
                 </ul>
 

@@ -9,6 +9,7 @@ import FormuleF from './components/filetraitement/formule/FormuleF.jsx';
 import Scan from './components/scan/Scan.jsx';
 import Sous from './components/Sous/Sous.jsx';
 import Document from './components/Document/Document.jsx';
+import ArchiveComponent from './components/Archivecomp/archive.jsx';
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
           <Route path='/scan' element={<Scan/>}/>
           <Route path='/sousDossiers' element={<Sous/>}/>
           <Route path='/Documents' element={<Document/>}/>
+          <Route path='/Archive' element={<ArchiveComponent/>}/>
         </Routes>
       </BrowserRouter>
       <Cursor/>
