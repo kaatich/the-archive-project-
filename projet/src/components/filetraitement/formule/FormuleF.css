@@ -1,6 +1,7 @@
 /* CSS for the FormuleF form */
 .Nforme{
     margin-right:15px;
+    color: brown;
 }
 .form-containerF {
   }
@@ -24,16 +25,17 @@
   }
   
   #inputF{
-    border:3px solid black;
-    border-radius:5px;
+    border:1px solid black;
     background-color:white;
-    width:100%;
+    width:165%;
     height:70%;
   }
   /* Style for labels */
   .form-section label {
     display: block;
     margin-bottom: 10px;
+    color: brown;
+    font-weight: bold;
   }
   
   /* Style for inputs */
@@ -51,17 +53,25 @@
   
   /* Style for buttons */
   .button-section button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin-right:90%;
+    margin-right:87%;
+    padding: 10px 39px;
+    font-size: 21px;
+    font-weight: bold;
+    background-color: brown;
+    border: none;
+    color: white;
+    font-family: "El Messiri", sans-serif;
   }
   
   /* Style for buttons on hover */
   .button-section button:hover {
     background-color: #0056b3;
   }
-  
+  /* FormuleF.css */
+/* Style for input field with datalist */
+/* FormuleF.css */
+/* FormuleF.css */
+/* Style for input field with datalist */
+
+

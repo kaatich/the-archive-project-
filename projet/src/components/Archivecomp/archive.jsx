@@ -1,18 +1,53 @@
 import React, { useState } from 'react';
+import './archive.css';
 
 const ArchiveComponent = () => {
   const [selectedTables, setSelectedTables] = useState(new Array(6).fill(null));
   const [selectedTabllet, setSelectedTabllet] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleTraveClick = (tableNumber, epicIndex) => {
     const updatedSelectedTables = [...selectedTables];
-    updatedSelectedTables[epicIndex] = tableNumber;
+    // Toggle the selected state of the Trave button
+    if (updatedSelectedTables[epicIndex] === tableNumber) {
+      updatedSelectedTables[epicIndex] = null; // Deselect if already selected
+    } else {
+      updatedSelectedTables[epicIndex] = tableNumber; // Select if not selected
+    }
     setSelectedTables(updatedSelectedTables);
-    setSelectedTabllet(null);
+    setSelectedTabllet(null); // Close the Tabllet de Rangement
   };
 
   const handleTablletClick = (tablletNumber) => {
     setSelectedTabllet(tablletNumber);
+  };
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const searchFiles = () => {
+    const searchResults = [];
+    // Implement your search logic here based on your file structure
+    // For now, returning an empty array
+    return searchResults;
+  };
+
+  const renderSearchResults = () => {
+    const results = searchFiles();
+    if (results.length === 0) {
+      return <p>No matching files found.</p>;
+    }
+    return (
+      <div>
+        <h2>Search Results</h2>
+        {/* Render the search results here */}
+        {/* Modify this based on your file structure */}
+        {results.map((file, index) => (
+          <div key={index}>{file.name}</div>
+        ))}
+      </div>
+    );
   };
 
   const generateTableRows = (epicIndex) => {
@@ -119,7 +154,17 @@ const ArchiveComponent = () => {
   return (
     <div>
       <h1>مكان تخزين الملفات</h1>
-      {renderTables()}
+      {/* Search Input */}
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={handleSearchInputChange}
+        placeholder="Search files by name..."
+      />
+      {/* Render Search Results */}
+      {searchQuery && renderSearchResults()}
+      {/* Render Tables */}
+      {!searchQuery && renderTables()}
     </div>
   );
 };

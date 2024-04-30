@@ -23,7 +23,7 @@
 }
 .btn-add2{
     padding: 0 50px;
-  font-size: 15px;
+  font-size: 21px;
   font-weight: bold;
   background-color: brown;
   border: none;
@@ -68,4 +68,12 @@
     color: white;
     background-color: brown;
     font-family: "El Messiri", sans-serif;
+  }
+  #input2{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  #input1{
+    margin-right: 10px;
+    margin-left: 10px;
   }

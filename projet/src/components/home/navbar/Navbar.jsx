@@ -23,17 +23,18 @@ const Navbar = () => {
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
+    
 
     return (
         <>
             <div className='navbar'>
-                <div className='logo2'>
+            <Link to='/home'><div className='logo2'>
                     <img className='logo-home' src={logo} alt="" />
                     <div className='name-home'>
                         <span>Centre D'archive Et Documentation</span><br />
                         <span>مركز الارشيف والتوثيق</span>
                     </div>
-                </div>
+                </div></Link>
                 <div className='left'>
                     <div className='language-select'>
                         <div className='selected-language' onClick={toggleDropdown}>
@@ -51,9 +52,10 @@ const Navbar = () => {
                             </div>
                         )}
                     </div>
-                    <div className='profile'>
+                    
+                    <Link to='/'><div className='profile'>
                         <button className='login-btn'><i class="fa-regular fa-user"></i> تسجيل الدخول </button>
-                    </div>
+                    </div></Link>
                 </div>
             </div>
             
@@ -65,7 +67,7 @@ const Navbar = () => {
                     <Link to='/FileTraitement'><li>معالجة الوتائق</li></Link>
                     <Link to='/scan'><li>تصوير و فهرسة الوثائق</li></Link>
                     <Link to='/Archive'><li>تخزين الوثائق</li></Link>
-                    <li>البحت</li>
+                    <Link to='/search'><li>البحت</li></Link>
                 </ul>
 
             </div>

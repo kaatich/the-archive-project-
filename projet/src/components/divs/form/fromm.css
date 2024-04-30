@@ -1,6 +1,6 @@
 .addd-document{
     margin-top: 7cm;
-    margin-right: 2cm;
+    margin-right: 0cm;
 }
 .form-container{
     display: flex;
@@ -26,7 +26,7 @@
   color: white;
   font-family: "El Messiri", sans-serif;
   margin: 39px;
-  border-radius: 5px;
+  
 
 }
 

@@ -1,3 +1,4 @@
+// Scan.js
 import React, { useState, useRef } from 'react';
 import './scan.css';
 import add from '../Assets/add.png';
@@ -7,8 +8,10 @@ const Scan = () => {
     const [selectedOption, setSelectedOption] = useState("Select your option");
     const [selectedIcon, setSelectedIcon] = useState("bx bx-chevron-down"); // Default icon
     const [selectedFile, setSelectedFile] = useState(null);
-    const fileInputRef = useRef(null);
-    const [data, setData] = useState([]);
+    const fileInputRef1 = useRef(null); // Separate ref for first file input
+    const fileInputRef2 = useRef(null); // Separate ref for second file input
+    const [data1, setData1] = useState([]);
+    const [data2, setData2] = useState([]);
     const [input1, setInput1] = useState('');
     const [input2, setInput2] = useState('');
 
@@ -21,16 +24,18 @@ const Scan = () => {
         setSelectedIcon(iconClass);
         setIsActive(false);
     };
-    const handleImageClick = () => {
-        fileInputRef.current.click();
-    };
 
-    const handleFileChange = (event) => {
+    const handleFileChange = (event, table) => {
         const file = event.target.files[0];
         setSelectedFile(file);
         if (file) {
-            const newData = [...data, { input1: data.length + 1, input2: file.name }];
-            setData(newData);
+            if (table === 1) {
+                const newData = [...data1, { input1: data1.length + 1, input2: file.name }];
+                setData1(newData);
+            } else if (table === 2) {
+                const newData = [...data2, { input1: data2.length + 1, input2: file.name }];
+                setData2(newData);
+            }
         }
     };
 
@@ -40,17 +45,23 @@ const Scan = () => {
         // For example, you can send selectedOption and selectedFile to a server
     };
 
-    const handleDeleteButtonClick = (index) => {
-        const newData = [...data];
-        newData.splice(index, 1);
-        setData(newData);
+    const handleDeleteButtonClick = (index, table) => {
+        if (table === 1) {
+            const newData = [...data1];
+            newData.splice(index, 1);
+            setData1(newData);
+        } else if (table === 2) {
+            const newData = [...data2];
+            newData.splice(index, 1);
+            setData2(newData);
+        }
     };
 
-    const handleModifyButtonClick = (index) => {
-        const selectedItem = data[index];
+    const handleModifyButtonClick = (index, table) => {
+        const selectedItem = table === 1 ? data1[index] : data2[index];
         setInput1(selectedItem.input1);
         setInput2(selectedItem.input2);
-        handleDeleteButtonClick(index);
+        handleDeleteButtonClick(index, table);
     };
 
     return (
@@ -64,42 +75,14 @@ const Scan = () => {
                         <div className="file-input-container2">
                             <input
                                 type="file"
-                                onChange={handleFileChange}
+                                onChange={(event) => handleFileChange(event, 1)}
                                 className="file-input2"
-                                ref={fileInputRef}
+                                ref={fileInputRef1} // Assign ref for the first file input
                             />
-                            <label htmlFor="file-input" className="file-label2" onClick={handleImageClick}>
+                            <label htmlFor="file-input" className="file-label2" onClick={() => fileInputRef1.current.click()}>
                                 <img className='img-add' src={add} alt="Upload File" />
                             </label>
                         </div>
-                        <div className={`select-menu ${isActive ? 'active' : ''}`}>
-    <div className="select-btn" onClick={handleSelect}>
-        <span className="sBtn-text">{selectedOption}</span>
-        <i className={selectedIcon}></i>
-    </div>
-    <ul className="options">
-        <li className="option" onClick={() => handleOptionClick("Excel", "far fa-file-excel")}>
-            <i className="far fa-file-excel" style={{ color: '#1F9D55', verticalAlign: 'middle' }}></i>
-            <span className="option-text">Excel</span>
-        </li>
-        <li className="option" onClick={() => handleOptionClick("Word", "far fa-file-word")}>
-            <i className="far fa-file-word" style={{ color: '#2B579A', verticalAlign: 'middle' }}></i>
-            <span className="option-text">Word</span>
-        </li>
-        <li className="option" onClick={() => handleOptionClick("PDF", "far fa-file-pdf")}>
-            <i className="far fa-file-pdf" style={{ color: 'rgb(255, 23, 23)', verticalAlign: 'middle' }}></i>
-            <span className="option-text">PDF</span>
-        </li>
-        <li className="option" onClick={() => handleOptionClick("Image", "far fa-file-image")}>
-            <i className="far fa-file-image" style={{ color: '#663399', verticalAlign: 'middle' }}></i>
-            <span className="option-text">Image</span>
-        </li>
-    </ul>
-</div>
-
-
-
-
                     </div>
                     <div>
                         <table className="data-table">
@@ -113,18 +96,18 @@ const Scan = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {data1.map((item, index) => (
                                     <tr key={index}>
                                         <td>{item.input1}</td>
                                         <td>{item.input2}</td>
                                         <td>
-                                            <button className='btn-mod' onClick={() => handleModifyButtonClick(index)}>تعديل</button>
+                                            <button className='btn-mod' onClick={() => handleModifyButtonClick(index, 1)}>تعديل</button>
                                         </td>
                                         <td>
-                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index)}>حذف</button>
+                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index, 1)}>حذف</button>
                                         </td>
                                         <td>
-                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index)}>معالجة</button>
+                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index, 1)}>معالجة</button>
                                         </td>
                                     </tr>
                                 ))}
@@ -140,41 +123,13 @@ const Scan = () => {
                         <div className="file-input-container2">
                             <input
                                 type="file"
-                                onChange={handleFileChange}
+                                onChange={(event) => handleFileChange(event, 2)}
                                 className="file-input2"
-                                ref={fileInputRef}
+                                ref={fileInputRef2} // Assign ref for the second file input
                             />
-                            <label htmlFor="file-input" className="file-label2" onClick={handleImageClick}>
+                            <label htmlFor="file-input" className="file-label2" onClick={() => fileInputRef2.current.click()}>
                                 <img className='img-add' src={add} alt="Upload File" />
                             </label>
-                        </div>
-                        <div className={`select-menu ${isActive ? 'active' : ''}`}>
-                            <div className="select-btn" onClick={handleSelect}>
-                                <span className="sBtn-text">{selectedOption}</span>
-                                <i className={selectedIcon}></i>
-                            </div>
-                            <ul className="options">
-                                <li className="option" onClick={() => handleOptionClick("Github", "bx bxl-github")}>
-                                    <i className="bx bxl-github" style={{ color: '#171515' }}></i>
-                                    <span className="option-text">Github</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Instagram", "bx bxl-instagram-alt")}>
-                                    <i className="bx bxl-instagram-alt" style={{ color: '#E1306C' }}></i>
-                                    <span className="option-text">Instagram</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Linkedin", "bx bxl-linkedin-square")}>
-                                    <i className="bx bxl-linkedin-square" style={{ color: '#0E76A8' }}></i>
-                                    <span className="option-text">Linkedin</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Facebook", "bx bxl-facebook-circle")}>
-                                    <i className="bx bxl-facebook-circle" style={{ color: '#4267B2' }}></i>
-                                    <span className="option-text">Facebook</span>
-                                </li>
-                                <li className="option" onClick={() => handleOptionClick("Twitter", "bx bxl-twitter")}>
-                                    <i className="bx bxl-twitter" style={{ color: '#1DA1F2' }}></i>
-                                    <span className="option-text">Twitter</span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                     <div>
@@ -189,18 +144,18 @@ const Scan = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {data2.map((item, index) => (
                                     <tr key={index}>
                                         <td>{item.input1}</td>
                                         <td>{item.input2}</td>
                                         <td>
-                                            <button className='btn-mod' onClick={() => handleModifyButtonClick(index)}>تعديل</button>
+                                            <button className='btn-mod' onClick={() => handleModifyButtonClick(index, 2)}>تعديل</button>
                                         </td>
                                         <td>
-                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index)}>حذف</button>
+                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index, 2)}>حذف</button>
                                         </td>
                                         <td>
-                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index)}>معالجة</button>
+                                            <button className='btn-mod' onClick={() => handleDeleteButtonClick(index, 2)}>معالجة</button>
                                         </td>
                                     </tr>
                                 ))}
